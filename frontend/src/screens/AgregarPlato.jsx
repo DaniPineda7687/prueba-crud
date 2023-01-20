@@ -28,6 +28,9 @@ const AgregarPlato=()=>{
             })
         }
 
+
+        
+
     }
     return (
         <div>
