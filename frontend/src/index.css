@@ -68,3 +68,20 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.form-add-plato{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.form-add-plato label{
+  display: block;
+  margin-top: .8rem;
+}
+.form-add-plato input{
+  margin-left: .8rem;
+  padding: .8rem;
+}
+.form-add-plato button{
+  margin-top: 1.2rem;
+}
