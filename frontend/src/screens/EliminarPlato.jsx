@@ -10,11 +10,17 @@ const EliminarPlato=()=>{
         try{
             const {data} = await axios.get(`http://localhost:3000/api/platos/eliminar/${id}`);
             console.log(data);
-            toast("Se elimino el plato correctamente",{
-                type:"success"
-            })
+            if(data.deletedCount>0){
+                toast("Se elimino el plato correctamente",{
+                    type:"success"
+                })
+            }else{
+                toast("No se encontro el plato con ese id",{
+                    type:"error",
+                })
+            }
         }catch(err){
-            toast("No se encontro el plato con ese id",{
+            toast("Ocurrio un error, reintentelo",{
                 type:"error",
             })
         }
