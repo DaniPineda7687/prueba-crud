@@ -1,6 +1,7 @@
 import {BrowserRouter, Route, Routes} from "react-router-dom"
 import './App.css'
 import AgregarPlato from "./screens/AgregarPlato"
+import EliminarPlato from "./screens/EliminarPlato"
 import HomeScreen from "./screens/HomeScreen"
 import VerPlatos from "./screens/VerPlatos"
 
@@ -11,6 +12,7 @@ function App() {
         <Route path="/" element={<HomeScreen/>}/>
         <Route path="/agregarplato" element={<AgregarPlato/>}/>
         <Route path="/verPlatos" element={<VerPlatos/>}/>
+        <Route path="/eliminarplato" element={<EliminarPlato/>}/>
       </Routes>
     </BrowserRouter>
   )
