@@ -5,7 +5,7 @@ const platosSchema = mongoose.Schema({
     color:String,
     precio:Number,
     nombre:String,
-    fechaInicio:Date,
+    fechaInicio:String,
 })
 
 const Plato = mongoose.model("Plato",platosSchema);

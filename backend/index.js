@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import bodyParser from "body-parser";
 import cors from "cors";
-import PlatosRoutes from "./routes/PlatosRouter";
+import PlatosRoutes from "./routes/PlatosRouter.js";
 const app = express();
 
 dotenv.config();
