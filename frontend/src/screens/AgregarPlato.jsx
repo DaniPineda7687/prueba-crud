@@ -1,16 +1,18 @@
 import { useState } from "react";
-import {toast} from "react-toastify"
+import {toast} from "react-toastify";
+import {useNavigate} from "react-router-dom";
+import axios from "axios"
 const AgregarPlato=()=>{
-    
-    const[id,setId]=useState("");
+    const navigate = useNavigate();
+    const[idPlato,setId]=useState("");
     const[color,setColor]=useState("");
     const[precio,setPrecio]=useState(0);
     const[nombre,setNombre]=useState("");
     const[fecha,setFecha]=useState("");
     
-    const handleSubmitForm=(e)=>{
+    const handleSubmitForm=async(e)=>{
         e.preventDefault();
-        if(id.length===0||color.length===0||precio.length===0||nombre.length===0||fecha.length===0){
+        if(idPlato.length===0||color.length===0||precio.length===0||nombre.length===0||fecha.length===0){
             toast("Debe completar todos los campos antes de continuar",{
                 type:"error"
             })
@@ -26,10 +28,25 @@ const AgregarPlato=()=>{
             toast("Error, el nombre del plato debe tener mínimo dos palabras",{
                 type:"error"
             })
+            return;
         }
 
+        try{
+            const{data}=await axios.post("http://localhost:3000/api/platos/registrar",{
+                idPlato,
+                color,
+                precio,
+                nombre,
+                fecha,
+            })
+            console.log(data);
+            toast("Registro exitoso",{
+                type:"success"
+            })
+        }catch(err){
 
-        
+        }
+
 
     }
     return (
@@ -53,6 +70,8 @@ const AgregarPlato=()=>{
                 </label>
                 <button>Registrar nuevo plato</button>
             </form>
+
+            <button onClick={()=>navigate("/")} className="button-back">Volver atras</button>
         </div>
     );
 }

@@ -6,7 +6,8 @@ const HomeScreen=()=>{
             <h1>Inicio</h1>
             <div className="options-container">
                 <Link to="/agregarplato">Agregar plato</Link>
-                <Link to="/verplatos">Ver platos</Link>  
+                <Link to="/verplatos">Ver platos</Link> 
+                <Link to="/eliminarplato">Eliminar plato</Link>   
             </div>
         </div>
     );
